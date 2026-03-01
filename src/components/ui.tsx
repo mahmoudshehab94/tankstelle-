@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { forwardRef } from 'react'
 
 export function Container({ children }: { children: React.ReactNode }) {
-  return <div className="mx-auto w-full max-w-6xl px-4 pb-24 lg:px-6">{children}</div>
+  return <div className="mx-auto w-full max-w-6xl px-4 pb-10 lg:px-6">{children}</div>
 }
 
 export function SectionTitle({ children }: { children: React.ReactNode }) {
