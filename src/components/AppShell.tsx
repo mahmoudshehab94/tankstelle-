@@ -31,10 +31,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
           <div className="w-24">
             <Select value={locale} onChange={(e) => setLocale(e.target.value as any)}>
-              <option value="en">EN</option>
-              <option value="ar">AR</option>
-              <option value="de">DE</option>
-              <option value="hi">HI</option>
+              <option value="en">English</option>
+              <option value="ar">العربية</option>
+              <option value="de">Deutsch</option>
+              <option value="hi">हिन्दी</option>
             </Select>
           </div>
         </div>

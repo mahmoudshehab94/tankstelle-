@@ -120,7 +120,7 @@ export default function HomePage() {
               <div className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{t('nearMe')}</div>
               <div className="text-xs text-zinc-500 dark:text-zinc-400">{t('officialList')} • {stations.length} {t('results')}</div>
             </div>
-            <Button size="lg" onClick={onUseLocation}>{t('useMyLocation')}</Button>
+            <Button size="lg" onClick={onUseLocation} disabled={loading}>{loading ? 'Loading…' : t('useMyLocation')}</Button>
           </div>
           <div className="mt-4 grid gap-3 md:grid-cols-4">
             <Select value={fuelType} onChange={(e) => setFuelType(e.target.value as FuelType)}>
@@ -147,7 +147,7 @@ export default function HomePage() {
 
         <Card className="mb-4">
           <div className="grid gap-3 md:grid-cols-3">
-            <Input placeholder={t('search')} value={search} onChange={(e) => setSearch(e.target.value)} />
+            <Input placeholder={`${t('search')}...`} value={search} onChange={(e) => setSearch(e.target.value)} />
             <Select value={brandFilter} onChange={(e) => setBrandFilter(e.target.value)}>
               <option value="all">{t('allBrands')}</option>
               {brands.map((b) => (
@@ -170,9 +170,7 @@ export default function HomePage() {
         {!loading && filtered.length === 0 && (
           <Card className="mt-6">
             <div className="text-sm text-zinc-500 dark:text-zinc-400">{t('noResults')}</div>
-            <div className="mt-3">
-              <Button onClick={onUseLocation}>{t('useMyLocation')}</Button>
-            </div>
+            <div className="mt-2 text-xs text-zinc-400">{t('enableLocationBody')}</div>
           </Card>
         )}
 
